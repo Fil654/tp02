@@ -14,12 +14,13 @@ class MyAgendaList extends StatelessWidget {
       children: [
         Container(
           child: Scaffold(
+            backgroundColor: Colors.blue,
             body: SafeArea(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('My agenda'),
+                  Text('Mon agenda'),
                   Text('These are the topics I’d like to discuss today.'),
                   for (final item in agenda.items) AgendaListItem(item),
                 ],
