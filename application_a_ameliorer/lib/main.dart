@@ -13,8 +13,6 @@ void main() {
   ));
 }
 
-
-
 Map<int, Color> MagicMintcolor = {
   50: Color.fromRGBO(244, 253, 249, .1),
   100: Color.fromRGBO(228, 249, 239, .2),
@@ -87,11 +85,22 @@ MaterialColor greenRYB = MaterialColor(0xFFA6EBC9, GreenRYBcolor);
 MaterialColor oliveDrab7 = MaterialColor(0xFFA6EBC9, OliveDrab7color);
 
 
+
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      theme: ThemeData(
+        // bruh
+        colorScheme: ColorScheme.fromSwatch(
+          primarySwatch: magicMint,
+      ).copyWith(
+        secondary: screaminGreen,
+
+
+      )),
       home: Loader(
         () => parseAgenda(context),
         (agenda) => MyAgendaList(agenda),

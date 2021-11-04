@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tp2/main.dart';
 import 'congrats.dart';
 import 'data/agenda.dart';
 import 'item.dart';
@@ -13,8 +14,8 @@ class MyAgendaList extends StatelessWidget {
     return Stack(
       children: [
         Container(
+         // color: Colors.green,
           child: Scaffold(
-            backgroundColor: Colors.blue,
             body: SafeArea(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
