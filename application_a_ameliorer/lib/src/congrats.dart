@@ -12,15 +12,15 @@ class CongratsCard extends StatelessWidget {
       left: 40,
       right: 40,
       top: allDone ? 100 : -420,
-      duration: const Duration(milliseconds: 500),
+      duration: const Duration(milliseconds: 2000),
       curve: Curves.easeOutCubic,
       child: RepaintBoundary(
         child: Card(
-          shape: CircleBorder(),
+          shape: Border(),
           elevation: 12,
           child: Padding(
             padding:
-                EdgeInsets.only(top: 130, left: 50, right: 50, bottom: 110),
+                EdgeInsets.only(top: 120, left: 50, right: 50, bottom: 100),
             child: _CardContents(allDone),
           ),
         ),
@@ -81,8 +81,8 @@ class _CardContentsState extends State<_CardContents>
             parent: _controller,
           ),
           child: SizedBox(
-            height: 70,
-            child: Image.asset('assets/party-popper_1f389.png'),
+            height: 80,
+            child: Image.asset('assets/balloons-with-confetti.png'),
           ),
         ),
         SizedBox(height: 20),
@@ -93,7 +93,7 @@ class _CardContentsState extends State<_CardContents>
         Padding(
           padding: const EdgeInsets.only(top: 20, bottom: 30),
           child: TrackedOutText(
-            'Bravo !  '
+            'Bien joué ! '
             'Vous venez de compléter le dernier TP !',
             CurvedAnimation(
               curve: Interval(0.45, 0.7),
@@ -101,7 +101,7 @@ class _CardContentsState extends State<_CardContents>
             ),
             textAlign: TextAlign.center,
             style: theme.textTheme.bodyText2.copyWith(
-              fontSize: 14,
+              fontSize: 18,
             ),
           ),
         ),
