@@ -18,7 +18,7 @@ class ItemDetail extends StatelessWidget {
         iconTheme: IconThemeData(color: theme.primaryColor),
         actions: [
           IconButton(
-            icon: Icon(Icons.bookmark_border),
+            icon: Icon(Icons.collections_bookmark),
             onPressed: () {},
           ),
         ],

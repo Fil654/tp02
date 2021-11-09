@@ -5,12 +5,36 @@ import 'src/data/loader.dart';
 import 'src/data/parse_agenda.dart';
 import 'src/list.dart';
 import 'package:provider/provider.dart';
+import 'src/data/palette.dart';
 
 void main() {
   runApp(ChangeNotifierProvider(
     create: (_) => DoneNotifier(),
     child: MyApp(),
   ));
+}
+
+@immutable
+class AppColors {
+  final mintMagic = const Color(0xFFB3EED1);
+
+  const AppColors();
+}
+
+class AppTheme {
+  static const colors = AppColors();
+
+  const AppTheme._();
+
+  static ThemeData define() {
+    return ThemeData(
+      fontFamily: "SFRegular",
+      primaryColor: Color(0xffD52A67),
+      // ignore: deprecated_member_use
+      accentColor: Color(0xffD5422A),
+      focusColor: Color(0xffD52ABD),
+    );
+  }
 }
 
 Map<int, Color> MagicMintcolor = {
@@ -79,10 +103,10 @@ Map<int, Color> OliveDrab7color = {
 };
 
 MaterialColor magicMint = MaterialColor(0xFFA6EBC9, MagicMintcolor);
-MaterialColor screaminGreen = MaterialColor(0xFFA6EBC9, ScreaminGreencolor);
-MaterialColor screaminGreen2 = MaterialColor(0xFFA6EBC9, ScreaminGreencolor2);
-MaterialColor greenRYB = MaterialColor(0xFFA6EBC9, GreenRYBcolor);
-MaterialColor oliveDrab7 = MaterialColor(0xFFA6EBC9, OliveDrab7color);
+MaterialColor screaminGreen = MaterialColor(0xFF61FF7E, ScreaminGreencolor);
+MaterialColor screaminGreen2 = MaterialColor(0xFF5EEB5B, ScreaminGreencolor2);
+MaterialColor greenRYB = MaterialColor(0xFF62AB37, GreenRYBcolor);
+MaterialColor oliveDrab7 = MaterialColor(0xFF393424, OliveDrab7color);
 
 class MyApp extends StatelessWidget {
   @override
@@ -90,12 +114,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-          // bruh
-          colorScheme: ColorScheme.fromSwatch(
-        primarySwatch: magicMint,
-      ).copyWith(
-        secondary: screaminGreen,
-      )),
+        // bruh
+        primarySwatch: Palette.magicMint_,
+        backgroundColor: magicMint,
+      ),
       home: Loader(
         () => parseAgenda(context),
         (agenda) => MyAgendaList(agenda),
