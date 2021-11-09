@@ -84,22 +84,17 @@ MaterialColor screaminGreen2 = MaterialColor(0xFFA6EBC9, ScreaminGreencolor2);
 MaterialColor greenRYB = MaterialColor(0xFFA6EBC9, GreenRYBcolor);
 MaterialColor oliveDrab7 = MaterialColor(0xFFA6EBC9, OliveDrab7color);
 
-
-
-
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        // bruh
-        colorScheme: ColorScheme.fromSwatch(
-          primarySwatch: magicMint,
+          // bruh
+          colorScheme: ColorScheme.fromSwatch(
+        primarySwatch: magicMint,
       ).copyWith(
         secondary: screaminGreen,
-
-
       )),
       home: Loader(
         () => parseAgenda(context),

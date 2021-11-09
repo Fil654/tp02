@@ -31,7 +31,7 @@ class AgendaListItem extends StatelessWidget {
           onTap: () {
             context.read<DoneNotifier>().toggle(item);
           },
-          child: Icon(Icons.check,
+          child: Icon(Icons.add_box,
               size: 28,
               color: isDone ? theme.primaryColor : theme.primaryColorLight),
         ),
