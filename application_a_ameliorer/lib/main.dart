@@ -116,7 +116,6 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         // bruh
         primarySwatch: Palette.magicMint_,
-        backgroundColor: magicMint,
       ),
       home: Loader(
         () => parseAgenda(context),
